@@ -1,6 +1,12 @@
 import { pipeline } from '@huggingface/transformers';
+import express from 'express';
+import cors from 'cors';
 
-const pipe = await pipeline(
+const app = express();
+app.use(cors());
+
+app.get('/', async (req, res) => {
+    const pipe = await pipeline(
   'text-generation',
   'HuggingFaceTB/SmolLM3-3B-Base',
   {
@@ -14,3 +20,7 @@ const out = await pipe('Olá, meu nome é gabriel, e o seu?:',   {
     do_sample: true        
   });
 console.log(out);
+res.send(out);
+});
+
+

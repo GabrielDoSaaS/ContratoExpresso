@@ -12,6 +12,9 @@
   "dependencies": {
     "@huggingface/inference": "^4.8.0",
     "@huggingface/transformers": "^3.7.3",
+    "axios": "^1.12.1",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
     "openai": "^5.20.2"
   },
   "type": "module"
